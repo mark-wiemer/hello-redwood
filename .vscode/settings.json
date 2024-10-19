@@ -8,7 +8,6 @@
   "[prisma]": {
     "editor.formatOnSave": true
   },
-  "cSpell.words": [
-    "redwoodjs"
-  ]
+  "cSpell.words": ["redwoodjs"],
+  "git.branchProtection": []
 }
