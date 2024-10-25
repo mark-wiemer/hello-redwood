@@ -11,6 +11,7 @@ import {
   TextAreaField,
   FieldError,
   Label,
+  FormError,
 } from '@redwoodjs/forms'
 import { Metadata, useMutation } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
@@ -30,7 +31,7 @@ const CREATE_CONTACT = gql`
 `
 
 const ContactPage = () => {
-  const [create, { loading }] = useMutation<
+  const [create, { loading, error }] = useMutation<
     CreateContactMutation,
     CreateContactMutationVariables
   >(CREATE_CONTACT, {
@@ -47,7 +48,8 @@ const ContactPage = () => {
     <>
       <Metadata title="Contact" description="Contact page" />
       <Toaster />
-      <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }}>
+      <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }} error={error}>
+        <FormError error={error} wrapperClassName="form-error" />
         {/* Name */}
         <Label name="name" errorClassName="error">
           Name
