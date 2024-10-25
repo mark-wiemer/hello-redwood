@@ -125,20 +125,8 @@ export const handler = async (
     //
     // If this returns anything else, it will be returned by the
     // `signUp()` function in the form of: `{ message: 'String here' }`.
-    handler: ({
-      username,
-      hashedPassword,
-      salt,
-      userAttributes: _userAttributes,
-    }) => {
-      return db.user.create({
-        data: {
-          email: username,
-          hashedPassword: hashedPassword,
-          salt: salt,
-          // name: userAttributes.name
-        },
-      })
+    handler: () => {
+      return false
     },
 
     // Include any format checks for password here. Return `true` if the
