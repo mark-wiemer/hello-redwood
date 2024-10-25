@@ -12,7 +12,8 @@
     "datasource",
     "dbauth",
     "markwiemer",
-    "redwoodjs"
+    "redwoodjs",
+    "Signup"
   ],
   "git.branchProtection": []
 }
